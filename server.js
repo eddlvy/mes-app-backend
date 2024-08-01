@@ -13,8 +13,7 @@ const updateToZeroRouter = require('./routes/updateToZeroRoute');
 connectToDB();
 const port = process.env.PORT;
 app.use(express.json())
-app.options('*', cors());
-app.use(cors({ origin: 'https://mes-app.netlify.app' }))
+app.use(cors())
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "https://mes-app.netlify.app");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
